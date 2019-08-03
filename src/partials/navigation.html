@@ -1,0 +1,91 @@
+<div data-sticky-container>
+  <section>
+    <!--DESKTOP LEFT MENU-->
+    <div class="top-bar " data-sticky data-margin-top="0" id="example-menu">
+      <div class="top-bar-left">
+        <ul class=" menu" data-dropdown-menu>
+          <a href="https://www.linkedin.com/in/sean-reed-aa69a282/">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="https://github.com/sreedartwork">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a href="https://sourcerer.io/sreedartwork">
+            <i class="fab fa-jedi-order fa-2x"></i>
+          </a>
+        </ul>
+      </div>
+      <!--DESKTOP RIGHT MENU-->
+      <div class="top-bar-right show-for-medium float-right">
+        <ul class="menu " data-submenu>
+          <li><a href="#portfolio-section">Web Development</a></li>
+          <li><a href="#art">Art-Work</a></li>
+          <li><a href="#about-me-section">About Me</a></li>
+          <li><a href="#contact-section">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="off-canvas position-top" id="offCanvas" data-off-canvas>
+    <!-- Your menu or Off-canvas content goes here -->
+
+    <ul class="menu vertical">
+      <li><a href="#portfolio-section">Web Development</a></li>
+      <li><a href="#art" target="_blank">Art-Work</a></li>
+      <li><a href="#about-me-section" target="_blank">About Me</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="off-canvas-wrapper">
+    <div
+      class="off-canvas position-left show-for-medium"
+      id="offCanvas"
+      data-transition="overlap"
+      data-off-canvas
+    >
+      <ul class="menu vertical">
+        <li><a href="#portfolio-section">Web Development</a></li>
+        <li><a href="#art">Art-Work</a></li>
+        <li><a href="#about-me-section">About Me</a></li>
+        <li><a href="#contact-section">Contact</a></li>
+      </ul>
+      <button
+        class="close-button"
+        aria-label="Close menu"
+        type="button"
+        data-close
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!-- off-canvas -->
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div class="expanded row">
+        <div class="title-bar" data-responsive-toggle="menu">
+          <button class="menu-icon" type="button" data-toggle></button>
+          <div class="title-bar-title">Menu</div>
+        </div>
+
+        <div class="top-bar show-for-small-only" id="menu">
+          <div class="top-bar-left">
+            <!-- Menu -->
+
+            <ul class="dropdown vertical menu" data-dropdown-menu>
+              <li class="menu-text"></li>
+              <li><a href="#portfolio-section">Web Development</a></li>
+              <li><a href="#art">Art-Work</a></li>
+              <li><a href="#about-me-section">About Me</a></li>
+              <li><a href="#contact-section">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Top bar navigation -->
+    </div>
+    <!-- off canvas content -->
+  </div>
+  <!-- off canvas wrapper-->
+  <!--/////////////////////   OPEN BUTTON  ////////////////////////-->
+</div>

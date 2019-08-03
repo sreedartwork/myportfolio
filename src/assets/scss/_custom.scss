@@ -1,0 +1,438 @@
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+@mixin background {
+  @if $show-home-image {
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &:after {
+        //sudo element in place of class of "overlay" in body of html to sit in front of bg-img make to put content to use before or after//
+
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; //negative # to make sure it sits behind name
+        background: rgba($primary-color, $background-opacity);
+      }
+    }
+  }
+}
+
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content; //putting content allows us to use this mixin in other places in our markup
+  }
+}
+
+.top-bar {
+  background: $black;
+  .menu {
+    background: $black;
+    color: $white;
+    a {
+      color: $white;
+      &:hover {
+        color: lightblue;
+      }
+    }
+  }
+}
+
+/* USED TO KEEP TEXT CENTERED */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.name-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Six Caps";
+  font-size: 10vw;
+}
+
+/*  WEB */
+
+.web {
+  font-family: "Six Caps" !important;
+  color: white;
+  background: black;
+  padding-bottom: 0;
+  img {
+    padding-top: 0px;
+    margin-top: 0px;
+  }
+}
+#portfolio-section {
+  padding: 80px 15px;
+  background: black;
+}
+#portfolio-section .title {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+#portfolio-section .title .square {
+  background: rgba(255, 52, 52, 0.87);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 23px;
+}
+#portfolio-section .title h1 {
+  position: relative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+  letter-spacing: 4px;
+}
+// #portfolio-section .portfolio-container {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-template-rows: 150px 150px 150px 150px 150px;
+//   grid-gap: 10px;
+// }
+// #portfolio-section .portfolio-container .box {
+//   background: black;
+//   display: block;
+//   transition: all 0.4s ease-in-out;
+//   cursor: pointer;
+//   width: 100%;
+//   color: white;
+//   text-decoration: none;
+//   text-transform: uppercase;
+//   overflow: hidden;
+// }
+// #portfolio-section .portfolio-container .box:hover {
+//   background: rgba(255, 255, 255, 1);
+//   -webkit-box-shadow: 0px 40px 74px 24px rgba(0, 0, 0, 0.08);
+//   -moz-box-shadow: 0px 40px 74px 24px rgba(0, 0, 0, 0.08);
+//   box-shadow: 0px 40px 74px 24px rgba(0, 0, 0, 0.08);
+// }
+// #portfolio-section .portfolio-container .box .image .hover-bg {
+//   padding: 10px 20px;
+//   background: rgba(255, 255, 255, 0);
+//   transition: all 0.4s ease-in-out;
+//   height: 100%;
+//   width: 100%;
+// }
+// #portfolio-section .portfolio-container .box:hover .image .hover-bg {
+//   padding: 10px 20px;
+//   background: rgba(255, 53, 53, 0.8);
+// }
+// #portfolio-section .portfolio-container .box .image .hover-bg .title {
+//   height: 100%;
+//   width: 100%;
+// }
+// #portfolio-section .portfolio-container .box .image .hover-bg .title .text {
+//   background: black;
+//   border-radius: 5px;
+//   padding: 10px 20px;
+//   transform: translate3d(0, 400px, 0);
+//   transition: all 0.5s ease-in-out;
+//   opacity: 0;
+// }
+// #portfolio-section
+//   .portfolio-container
+//   .box:hover
+//   .image
+//   .hover-bg
+//   .title
+//   .text {
+//   background: black;
+//   border-radius: 5px;
+//   padding: 10px 20px;
+//   transform: translate3d(0, 0, 0);
+//   opacity: 1;
+// }
+// /* BOX LOCATIONS */
+// #portfolio-section .portfolio-container .box.image1 {
+//   grid-column: 1/3;
+//   grid-row: 1/2;
+// }
+// #portfolio-section .portfolio-container .box.image1 .image {
+//   background: url("https://res.cloudinary.com/dnj3ilqbx/image/upload/v1563505018/portfolio/hosting_website.png");
+//   height: 100%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
+// #portfolio-section .portfolio-container .box.image2 {
+//   grid-column: 3/4;
+//   grid-row: 1/4;
+// }
+// #portfolio-section .portfolio-container .box.image2 .image {
+//   background: url("https://res.cloudinary.com/dnj3ilqbx/image/upload/v1563507165/portfolio/html_email_news_letter.png");
+//   height: 100%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
+// #portfolio-section .portfolio-container .box.image3 {
+//   grid-column: 1/2;
+//   grid-row: 2/4;
+// }
+// #portfolio-section .portfolio-container .box.image3 .image {
+//   background: url("https://res.cloudinary.com/dnj3ilqbx/image/upload/v1563507166/portfolio/html_email_promotional.png");
+//   height: 100%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
+// #portfolio-section .portfolio-container .box.image4 {
+//   grid-column: 2/3;
+//   grid-row: 2/3;
+// }
+// #portfolio-section .portfolio-container .box.image4 .image {
+//   background: url("https://res.cloudinary.com/dnj3ilqbx/image/upload/v1563829765/portfolio/mock_port.png");
+//   height: 100%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
+// #portfolio-section .portfolio-container .box.image5 {
+//   grid-column: 1/2;
+//   grid-row: 4/6;
+// }
+// #portfolio-section .portfolio-container .box.image5 .image {
+//   background: url("https://cdn.dribbble.com/users/2069811/screenshots/5824443/short1_nuro.png");
+//   height: 100%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
+// #portfolio-section .portfolio-container .box.image6 {
+//   grid-column: 2/3;
+//   grid-row: 3/6;
+// }
+// #portfolio-section .portfolio-container .box.image6 .image {
+//   background: url("https://cdn.dribbble.com/users/110372/screenshots/5824517/smart_home_dribbble_shot.png");
+//   height: 100%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
+// #portfolio-section .portfolio-container .box.image7 {
+//   grid-column: 3/4;
+//   grid-row: 4/6;
+// }
+// #portfolio-section .portfolio-container .box.image7 .image {
+//   background: url("https://cdn.dribbble.com/users/43342/screenshots/5824026/dribbblie_jan19_renders.jpg");
+//   height: 100%;
+//   width: 100%;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+// }
+
+/* PROJECTS */
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(4, 1fr);
+
+  img {
+    width: 100%;
+    height: 40%;
+    border: 3px #fff solid;
+
+    &:hover {
+      opacity: 1;
+      border-color: rgb(255, 70, 70);
+      @include easeOut;
+    }
+  }
+}
+
+//Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: #fd4547;
+    color: set-text-color ($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: rgba(255, 255, 255, 0.493);
+  color: rgb(253, 250, 250);
+}
+.btn-light {
+  @extend .btn;
+  background: rgba(255, 255, 255, 0.493);
+  color: #fff;
+}
+
+/* Art */
+.art {
+  font-family: "Six Caps" !important;
+  color: white;
+  background: black;
+  padding-bottom: 0;
+}
+#art .title .square {
+  background: rgba(255, 52, 52, 0.87);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 23px;
+}
+#art {
+  padding: 80px 15px;
+  background: black;
+}
+#art .title {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+#art .title h1 {
+  position: relative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+  letter-spacing: 4px;
+}
+
+/* ABOUT-ME */
+
+.about-me {
+  position: relative;
+  text-align: center; /* USED TO KEEP TEXT CENTERED */
+  color: white;
+  background: black;
+  // display: block;
+  padding: 40px;
+  font-size: 30px;
+}
+#about-me-section {
+  padding: 40px 15px;
+  background: black;
+}
+#about-me-section .title .square {
+  background: rgba(255, 52, 52, 0.87);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 23px;
+}
+#about-me-section .title {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+#about-me-section .title h1 {
+  position: relative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+/* ABOUT-ME */
+
+.contact > a {
+  position: relative;
+  text-align: center; /* USED TO KEEP TEXT CENTERED */
+  color: white !important;
+  background: black;
+  padding: 40px;
+  font-size: 30px;
+}
+#contact-section {
+  padding: 40px 15px;
+  background: black;
+}
+#contact-section .title .square {
+  background: rgba(255, 52, 52, 0.87);
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 23px;
+}
+#contact-section .title {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+#contact-section .title h1 {
+  position: relative;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+@include mediaXl {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Desktops & Laptops
+@include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Tablets & Small Laptops
+@include mediaMd {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Smartphones
+@include mediaSm {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}

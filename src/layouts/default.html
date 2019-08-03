@@ -1,0 +1,32 @@
+{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sreedartwork</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Six Caps"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
+    />
+    <link rel="stylesheet" href="{{ root }}assets/css/app.css" />
+  </head>
+  <body>
+    <div class="off-canvas-content" data-off-canvas-content>
+      {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+      {{> navigation}}
+      {{> body}}
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.min.js"></script>
+    <script src="{{ root }}assets/js/app.js"></script>
+  </body>
+</html>
